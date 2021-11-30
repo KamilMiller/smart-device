@@ -1,0 +1,50 @@
+// Mixins.
+
+// Margins & Paddings.
+
+@mixin side-padding($left, $right) {
+  padding-left: $left;
+  padding-right: $right;
+}
+
+@mixin side-margin($left, $right) {
+  margin-left: $left;
+  margin-right: $right;
+}
+
+@mixin indent-0($value: 0) {
+  padding: $value;
+  margin: $value;
+}
+
+// Font size & Line height.
+
+@mixin font($size, $line) {
+  font-size: $size;
+  line-height: $line;
+}
+
+// Sizing.
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// Width Fixation.
+
+@mixin center-fix-width($value: 20px, $width) {
+  @include side-margin(auto, auto);
+  @include side-padding($value, $value);
+  max-width: $width;
+  box-sizing: border-box;
+}
+
+// Lists style & margin reset.
+
+@mixin list-reset {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
