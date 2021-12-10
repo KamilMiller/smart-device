@@ -1,0 +1,68 @@
+// Button.
+
+.button {
+  @include font(14px, 16px);
+  min-width: 180px;
+  min-height: 45px;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: $white;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid $white;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($white, 0.3);
+  }
+
+  &:active {
+    background-color: rgba($white, 0.3);
+    opacity: 0.7;
+  }
+
+  &:focus {
+    border-color: $standart-blue;
+  }
+
+  &--opaque {
+    @include side-padding(45px, 45px);
+    @include font(16px, 19px);
+    padding-top: 18px;
+    padding-bottom: 18px;
+    background-color: $standart-blue;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+
+    @media (max-width: $tablet-width) {
+      @include side-padding(31px, 31px);
+    }
+
+    &:focus {
+      outline: 1px solid $white;
+    }
+  }
+
+  &--blue-border {
+    border-color: $standart-blue;
+    color: $standart-blue;
+
+    &:hover {
+      background-color: $standart-blue;
+      color: $white;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+
+    &:focus {
+      border-color: $bg-dark;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+// Page.
+
+.page {
+  min-width: 320px;
+  height: 100%;
+  font-family: "PT Mono", Arial, sans-serif;
+  font-weight: 400;
+  background-color: $white;
+  scroll-behavior: smooth;
+}
+
+.page__body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
+}

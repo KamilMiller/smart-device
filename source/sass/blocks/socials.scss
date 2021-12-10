@@ -1,0 +1,25 @@
+// Social Networks List.
+
+.socials {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.socials__link {
+  @include size(27px, 27px);
+  display: block;
+}
+
+.socials__link svg {
+  fill: $social-buttons;
+}
+
+.socials__link:hover svg {
+  fill: $standart-blue;
+}
+
+.socials__link:active svg {
+  fill: $bg-dark;
+}

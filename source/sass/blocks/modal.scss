@@ -1,0 +1,64 @@
+// Modal.
+
+.modal {
+  @include size(100vw, 100vh);
+  position: fixed;
+  z-index: 3;
+  display: none;
+  background-color: rgba($black, 0.5);
+
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+
+  &--open {
+    display: block;
+  }
+}
+
+.modal__window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 490px;
+  padding: 30px 39px 36px 39px;
+  box-sizing: border-box;
+  background-color: $standart-blue;
+  box-shadow: 0 0 20px 5px rgba($black, 0.3);
+}
+
+.modal__close-button {
+  @include size(17px, 17px);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+
+  &::before,
+  &::after {
+    @include size(22px, 1px);
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: -2px;
+    display: block;
+    border-radius: 1px;
+    background-color: $white;
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+
+  &:focus {
+    outline: 1px solid $white;
+  }
+}

@@ -1,0 +1,164 @@
+// Advantages block.
+
+.advantages {
+  background: url("../img/svg/advantage.svg") -9px -29px;
+}
+
+.advantages__inner {
+  @include center-fix-width(24px, 1462px);
+  padding-top: 112px;
+}
+
+.advantages__list {
+  @include center-fix-width(0, 1170px);
+  @include side-margin(auto, auto);
+  @include list-reset;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 105px;
+
+  @media (max-width: $tablet-width) {
+    grid-template-rows: auto;
+    margin-bottom: 59px;
+  }
+
+  @media (max-width: $mobile-width) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.advantages__item {
+  min-height: 299px;
+  padding: 40px 42px;
+  box-sizing: border-box;
+  background-color: $white;
+  border: 1px solid $advantages-list-border;
+  border-left: 3px solid $standart-blue;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $standart-blue;
+    border-color: $standart-blue;
+  }
+
+  &:hover h4,
+  &:hover p {
+    color: $white;
+  }
+
+  &:hover svg {
+    fill: $white;
+  }
+
+  @media (max-width: $tablet-width) {
+    min-height: 232px;
+    padding: 24px 25px 22px 25px;
+  }
+}
+
+.advantages__item h4 {
+  @include font(24px, 34px);
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-weight: 400;
+  color: $standart-blue;
+
+  @media (max-width: $mobile-width) {
+    @include font(20px, 28px);
+  }
+}
+
+.advantages__item p {
+  @include font(16px, 22px);
+}
+
+.advantages__icon-box {
+  @include size(36px, 35px);
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 19px;
+  line-height: 0;
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 14px;
+  }
+}
+
+.advantages__icon-box svg {
+  fill: $standart-blue;
+}
+
+.advantages__about-company {
+  @include center-fix-width(0, 1170px);
+  @include side-margin(auto, auto);
+  position: relative;
+  min-height: 418px;
+  padding-left: 180px;
+  padding-bottom: 65px;
+
+  @media (max-width: $mobile-width) {
+    padding-left: 0;
+  }
+
+  &::before {
+    @include size(317px, 220px);
+    @include font(156px, 220px);
+    content: "2005";
+    position: absolute;
+    top: 53px;
+    left: -98px;
+    transform: rotate(-90deg);
+    display: block;
+    font-family: "Roboto Condensed", Arial, sans-serif;
+    font-weight: 700;
+    background-image: url("../img/jpg/board-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: $title-slogan-text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+}
+
+.advantages__about-company h3 {
+  @include font(36px, 51px);
+  margin-top: 0;
+  margin-bottom: 19px;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-weight: 400;
+  color: $advantages-title;
+}
+
+.advantages__about-company p {
+  @include font(16px, 22px);
+  max-width: 984px;
+  color: $advantages-title;
+  margin-top: 0;
+  margin-bottom: 22px;
+}
+
+.advantages__text-dots {
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}
+
+.advantages__about-company span {
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.advantages__more-button {
+  margin-top: 16px;
+}

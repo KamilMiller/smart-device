@@ -1,0 +1,51 @@
+// Block with Callback Form.
+
+.callback {
+  background: url("../../img/svg/form-block-bg.svg") no-repeat 166px -60px;
+  background-color: $standart-blue;
+
+  @media (max-width: $tablet-width) {
+    background-image: none;
+  }
+}
+
+.callback__inner {
+  @include center-fix-width(25px, 1220px);
+  display: flex;
+  justify-content: flex-end;
+  background: url("../../img/png/paper-airplane.png") no-repeat 0px 161px;
+
+  @media (min-resolution: 2dppx) {
+    background: url("../../img/png/paper-airplane@2x.png") no-repeat 0px 161px / 511px 288px,
+  }
+
+  @media (max-width: $tablet-width) {
+    @include side-padding(87px, 87px);
+    background-image: none;
+    display: block;
+  }
+
+  @media (max-width: $mobile-width)  {
+    @include side-padding(15px, 15px);
+  }
+}
+
+.callback__form-wrapper {
+  max-width: 50%;
+  padding-top: 91px;
+  padding-left: 15px;
+  padding-bottom: 73px;
+  box-sizing: border-box;
+
+  @media (max-width: $tablet-width) {
+    max-width: none;
+    padding-top: 83px;
+    padding-left: 0;
+    padding-bottom: 103px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-top: 33px;
+    padding-bottom: 41px;
+  }
+}

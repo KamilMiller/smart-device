@@ -1,0 +1,49 @@
+// Title box (logo & title).
+
+.title-box {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 206px;
+
+  @media (max-width: $mobile-width) {
+    min-width: auto;
+  }
+}
+
+.title-box--short-type .title-box__title {
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
+
+.title-box__logo {
+  margin-right: 16px;
+  display: block;
+  line-height: 0;
+}
+
+.title-box__logo svg {
+  @media (max-width: $mobile-width) {
+    @include size(38px, 38px);
+  }
+}
+
+.title-box__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.title-box__title p {
+  @include font(25px, 29px);
+  margin: 0;
+  font-family: "Roboto Condensed", Impact, sans-serif;
+  font-weight: 700;
+}
+
+.title-box__title i {
+  @include font(12px, 14px);
+  font-family: "Roboto", Arial, sans-serif;
+  margin: 3px 0 0 0;
+  color: $title-slogan-text;
+}

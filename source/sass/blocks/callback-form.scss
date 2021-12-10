@@ -1,0 +1,203 @@
+// Callback Form.
+
+.callback-form {
+  width: 100%;
+  background-color: $standart-blue;
+}
+
+.callback-form h3 {
+  @include font(36px, 51px);
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-left: -4px;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-weight: 400;
+  color: $white;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 15px;
+  }
+
+  @media (max-width: $mobile-width) {
+    @include font(28px, 40px);
+    margin-bottom: 11px;
+  }
+}
+
+.callback-form--modal h3 {
+  @include font(28px, 40px);
+  margin-left: 0;
+}
+
+.callback-form span {
+  white-space: nowrap;
+}
+
+.callback-form p {
+  @include font(16px, 22px);
+  margin-top: 0;
+  margin-bottom: 50px;
+  color: $white;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 52px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 25px;
+  }
+}
+
+.callback-form--modal p {
+  max-width: 400px;
+  margin-bottom: 33px;
+}
+
+.callback-form__inner {
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  column-gap: 30px;
+  row-gap: 40px;
+  margin-bottom: 40px;
+
+  @media (max-width: $tablet-width) {
+    column-gap: 31px;
+    row-gap: 42px;
+  }
+
+  @media (max-width: $mobile-width) {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &--modal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 0;
+  }
+}
+
+.callback-form__inner input {
+  height: 50px;
+
+  @media (max-width: $mobile-width) {
+    height: 52px;
+  }
+}
+
+.callback-form__inner--modal input {
+  height: 52px;
+}
+
+.callback-form__inner textarea {
+  grid-column: 1 / 3;
+  min-height: 154px;
+
+  @media (max-width: $mobile-width) {
+    height: 104px;
+  }
+}
+
+.callback-form__inner--modal textarea {
+  min-height: 104px;
+}
+
+.callback-form__inner input,
+.callback-form__inner textarea {
+  padding: 14px 16px;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  background-color: rgba($white, 0.1);
+  color: $white;
+
+  &:focus {
+    outline: 1px solid $white;
+  }
+}
+
+.callback-form__inner--modal input,
+.callback-form__inner--modal textarea {
+  padding: 14px 24px;
+}
+
+.callback-form__inner input::placeholder,
+.callback-form__inner textarea::placeholder {
+  color: $white;
+}
+
+.callback-form__button {
+  margin-top: 4px;
+
+  @media (max-width: $mobile-width) {
+    min-height: 47px;
+    margin-top: 0;
+  }
+
+  &:focus {
+    background-color: rgba($white, 0.1);
+    outline: 2px solid $white;
+  }
+}
+
+.callback-form__inner--modal .callback-form__button {
+  margin-top: 0;
+}
+
+.callback-form__consent-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 6px;
+  padding-left: 40px;
+
+  @media (max-width: $mobile-width) {
+    padding-left: 34px;
+  }
+}
+
+.callback-form__inner--modal .callback-form__consent-box {
+  max-width: 350px;
+  padding-left: 49px;
+}
+
+input[name="personal-data"]:focus + label,
+input[name="personal-data-modal"]:focus + label {
+  outline: 1px solid $white;
+}
+
+.callback-form__consent-box label {
+  @include font(14px, 16px);
+  color: $white;
+  user-select: none;
+  cursor: pointer;
+}
+
+.callback-form__consent-box label:after {
+  @include size(17px, 16px);
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 8px;
+  display: block;
+  background-image: url(../img/svg/checkbox-off.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  @media (max-width: $mobile-width) {
+    top: 0;
+    left: 0;
+  }
+}
+
+.callback-form__inner--modal label:after {
+  top: 7px;
+  left: 0;
+}
+
+input[name="personal-data"]:checked + label:after,
+input[name="personal-data-modal"]:checked + label:after {
+  background-image: url(../img/svg/checkbox-on.svg);
+}

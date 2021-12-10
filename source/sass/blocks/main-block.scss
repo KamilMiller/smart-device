@@ -1,0 +1,167 @@
+// Main block.
+
+.main-block {
+  display: grid;
+  grid-template-columns: 51% 1fr;
+
+  @media (max-width: $tablet-width) {
+    grid-template-columns: 67.3% 1fr;
+  }
+
+  @media (max-width: $mobile-width) {
+    display: block;
+  }
+}
+
+.main-block__content-inner {
+  max-width: 750px;
+  margin-left: auto;
+  padding-top: 58px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  // outline: 2px dashed tomato;
+
+  @media (max-width: $tablet-width) {
+    max-width: none;
+    padding-top: 106px;
+    padding-left: 87px;
+  }
+
+  @media (max-width: $mobile-width) {
+    @include side-padding(15px, 15px);
+    margin-left: 0;
+    padding-top: 216px;
+    background:
+      url("../img/png/printed-circuit-board.png") 5vh 0 / 301px 220px no-repeat,
+      url("../img/svg/triangles.svg") 52vw 0 / 461px 367px  no-repeat;
+
+    @media (min-resolution: 2dppx) {
+      background:
+      url("../img/png/printed-circuit-board@2x.png") 5vh 22px / 301px 220px no-repeat,
+      url("../img/svg/triangles.svg") 52vw 0 / 461px 367px  no-repeat;
+    }
+  }
+}
+
+.main-block__content-inner h2 {
+  @include font(80px, 94px);
+  margin-top: 0;
+  margin-bottom: 27px;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  @media (max-width: $tablet-width) {
+    @include font(60px, 70px);
+    max-width: 530px;
+  }
+
+  @media (max-width: $mobile-width) {
+    @include font(40px, 47px);
+  }
+}
+
+.main-block__content-inner p {
+  @include font(22px, 34.5px);
+  position: relative;
+  margin-left: 98px;
+  margin-bottom: 42px;
+
+  &:before {
+    @include size(66px, 2px);
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: -94px;
+    display: block;
+    background-color: $white;
+
+    @media (max-width: $tablet-width) {
+      left: -50px;
+      width: 33px;
+    }
+
+    @media (max-width: $mobile-width) {
+      top: 15px;
+      left: -45px;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    @include font(18px, 156.8%);
+    margin-left: 51px;
+  }
+
+  @media (max-width: $mobile-width) {
+    @include font(16px, 156.8%);
+    margin-left: 51px;
+    margin-bottom: px;
+  }
+}
+
+.main-block__button {
+  display: block;
+  max-width: 407px;
+  margin-left: 98px;
+  margin-bottom: 35px;
+
+  @media (max-width: $tablet-width) {
+    max-width: 379px;
+    margin-left: 51px;
+  }
+
+  @media (max-width: $mobile-width) {
+    @include side-margin(auto, auto);
+    width: 100%;
+    max-width: 500px;
+    // max-width: none;
+    // margin-left: 0;
+  }
+}
+
+.main-block__button span:first-child {
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
+
+.main-block__button span:last-child {
+  display: none;
+
+  @media (max-width: $mobile-width) {
+    display: inline;
+  }
+}
+
+.main-block__background {
+  height: 515px;
+  background:
+    url("../img/png/printed-circuit-board.png") 59px 0px / 705px 515px no-repeat,
+    url("../img/svg/triangles.svg") 72px 14px  no-repeat;
+  // outline: 2px dashed burlywood;
+
+  @media (min-resolution: 2dppx) {
+    background:
+      url("../img/png/printed-circuit-board@2x.png") 59px 0px / 705px 515px no-repeat,
+      url("../img/svg/triangles.svg") 72px 14px  no-repeat;
+  }
+
+  @media (max-width: $tablet-width) {
+    height: auto;
+    margin-left: -60px;
+    background:
+      url("../img/png/printed-circuit-board.png") 53px 31px / 465px 340px no-repeat,
+      url("../img/svg/triangles.svg") top left / 482px 384px  no-repeat;
+
+    @media (min-resolution: 2dppx) {
+      background:
+      url("../img/png/printed-circuit-board@2x.png") 53px 31px / 465px 340px no-repeat,
+      url("../img/svg/triangles.svg") top left / 482px 384px  no-repeat;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}

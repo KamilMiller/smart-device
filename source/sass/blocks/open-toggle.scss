@@ -1,0 +1,33 @@
+// Open toggle.
+
+.open-toggle {
+  @include size(16px, 16px);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &::before {
+    @include size(16px, 1px);
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: $footer-buttons;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  &--closed {
+    &:after {
+      @include size(1px, 16px);
+      content: "";
+      position: absolute;
+      display: block;
+      background-color: $footer-buttons;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

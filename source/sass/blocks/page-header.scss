@@ -1,0 +1,71 @@
+// Header.
+
+.page-header {
+  display: flex;
+}
+
+.page-header__title-box {
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.page-header__contact-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  row-gap: 15px;
+}
+
+.page-header__contact-box a {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  margin: 10px 0 10px 88px;
+  color: $white;
+  text-decoration: none;
+
+  &:hover {
+    color: $standart-blue;
+  }
+
+  &:active {
+    color: $standart-blue;
+    opacity: 0.7;
+  }
+
+  @media (max-width: $tablet-width) {
+    font-size: 0;
+    margin-left: 33px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-left: 23px;
+  }
+}
+
+.page-header__email-icon {
+  margin-right: 14px;
+
+  @media (max-width: $tablet-width) {
+    margin-right: 0;
+  }
+}
+
+.page-header__phone-icon {
+  margin-right: 16px;
+
+  @media (max-width: $tablet-width) {
+    margin-right: 0;
+  }
+}
+
+.page-header__callback-button {
+  align-self: flex-end;
+  margin-left: 50px;
+  margin-bottom: 3px;
+  margin-right: 3px;
+
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}
