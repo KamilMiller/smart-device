@@ -37,8 +37,8 @@
 
     @media (min-resolution: 2dppx) {
       background:
-      url("../img/png/printed-circuit-board@2x.png") 5vh 22px / 301px 220px no-repeat,
-      url("../img/svg/triangles.svg") 52vw 0 / 461px 367px  no-repeat;
+        url("../img/png/printed-circuit-board@2x.png") 5vh 22px / 301px 220px no-repeat,
+        url("../img/svg/triangles.svg") 52vw 0 / 461px 367px  no-repeat;
     }
   }
 }
@@ -68,7 +68,7 @@
   margin-left: 98px;
   margin-bottom: 42px;
 
-  &:before {
+  &::before {
     @include size(66px, 2px);
     content: "";
     position: absolute;
@@ -83,20 +83,21 @@
     }
 
     @media (max-width: $mobile-width) {
-      top: 15px;
-      left: -45px;
+      top: 14px;
+      left: -48px;
     }
   }
 
   @media (max-width: $tablet-width) {
     @include font(18px, 156.8%);
+    margin-bottom: 56px;
     margin-left: 51px;
   }
 
   @media (max-width: $mobile-width) {
     @include font(16px, 156.8%);
     margin-left: 51px;
-    margin-bottom: px;
+    margin-bottom: 39px;
   }
 }
 
@@ -115,7 +116,7 @@
     @include side-margin(auto, auto);
     width: 100%;
     max-width: 500px;
-    // max-width: none;
+    margin-bottom: 70px;
     // margin-left: 0;
   }
 }
@@ -137,13 +138,12 @@
 .main-block__background {
   height: 515px;
   background:
-    url("../img/png/printed-circuit-board.png") 59px 0px / 705px 515px no-repeat,
+    url("../img/png/printed-circuit-board.png") 59px 0 / 705px 515px no-repeat,
     url("../img/svg/triangles.svg") 72px 14px  no-repeat;
-  // outline: 2px dashed burlywood;
 
   @media (min-resolution: 2dppx) {
     background:
-      url("../img/png/printed-circuit-board@2x.png") 59px 0px / 705px 515px no-repeat,
+      url("../img/png/printed-circuit-board@2x.png") 59px 0 / 705px 515px no-repeat,
       url("../img/svg/triangles.svg") 72px 14px  no-repeat;
   }
 
@@ -156,8 +156,8 @@
 
     @media (min-resolution: 2dppx) {
       background:
-      url("../img/png/printed-circuit-board@2x.png") 53px 31px / 465px 340px no-repeat,
-      url("../img/svg/triangles.svg") top left / 482px 384px  no-repeat;
+        url("../img/png/printed-circuit-board@2x.png") 53px 31px / 465px 340px no-repeat,
+        url("../img/svg/triangles.svg") top left / 482px 384px  no-repeat;
     }
   }
 

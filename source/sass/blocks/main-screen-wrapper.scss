@@ -11,6 +11,14 @@
   @media (min-resolution: 2dppx) {
     background-image: url("../img/png/bg-mask@2x.png");
   }
+
+  @media (max-width: $tablet-width) {
+    padding-top: 20px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-top: 17px;
+  }
 }
 
 .main-screen-wrapper__header {
@@ -31,7 +39,7 @@
   margin-bottom: 105px;
 
   @media (max-width: $tablet-width) {
-    margin-bottom: 59px;
+    margin-bottom: 129px;
   }
 
   @media (max-width: $mobile-width) {

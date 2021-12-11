@@ -28,7 +28,7 @@
   <div class="main-screen-wrapper">
     <header class="main-screen-wrapper__header page-header">
       <div class="page-header__title-box title-box title-box--short-type">
-        <a class="title-box__logo" href="#" tabindex="2">
+        <a class="title-box__logo title-box__logo--main" href="#" tabindex="2">
           <svg width="52" height="52">
             <use xlink:href="img/svg/sprite.svg#logo"></use>
           </svg>
@@ -73,16 +73,16 @@
       <ul class="advantages__list">
         <li class="advantages__item">
           <div class="advantages__icon-box">
-            <svg width="29" height="35">
+            <svg class="advantages__watch-icon" width="29" height="35">
               <use xlink:href="img/svg/sprite.svg#watch-icon"></use>
             </svg>
           </div>
           <h4>Оперативные сроки</h4>
           <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки</p>
         </li>
-        <li class="advantages__item">
+        <li class="advantages__item advantages__item--suppliers">
           <div class="advantages__icon-box">
-            <svg width="35" height="35">
+            <svg class="advantages__group-icon" width="35" height="35">
               <use xlink:href="img/svg/sprite.svg#group-icon"></use>
             </svg>
           </div>
@@ -90,9 +90,9 @@
           <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции.
           </p>
         </li>
-        <li class="advantages__item">
+        <li class="advantages__item advantages__item--confidentiality">
           <div class="advantages__icon-box">
-            <svg width="36" height="31">
+            <svg class="advantages__detective-icon" width="36" height="31">
               <use xlink:href="img/svg/sprite.svg#detective-icon"></use>
             </svg>
           </div>
@@ -100,9 +100,9 @@
           <p>По желанию клиента мы обеспечиваем полную конфеденциальность.
           </p>
         </li>
-        <li class="advantages__item">
+        <li class="advantages__item advantages__item--personal-price">
           <div class="advantages__icon-box">
-            <svg width="35" height="35">
+            <svg class="advantages__tag-icon" width="35" height="35">
               <use xlink:href="img/svg/sprite.svg#tag-icon"></use>
             </svg>
           </div>
@@ -151,7 +151,7 @@
             <textarea id="message" name="message" tabindex="2" placeholder="Ваш вопрос" required></textarea>
             <button class="callback-form__button button" tabindex="2" type="submit">Задать вопрос</button>
             <div class="callback-form__consent-box">
-              <input class="visually-hidden" name="personal-data" tabindex="2" type="checkbox" id="consent" checked>
+              <input class="visually-hidden" name="personal-data" tabindex="2" type="checkbox" id="consent" checked required>
               <label for="consent">Я согласен на обработку персональных данных</label>
             </div>
           </div>
@@ -253,7 +253,6 @@
     </div>
   </footer>
 
-
   <div class="modal">
     <div class="modal__window">
       <button class="modal__close-button" aria-label="Закрыть форму"></button>
@@ -269,7 +268,7 @@
           <textarea id="message-modal" name="message" placeholder="Ваш вопрос" required></textarea>
           <button class="callback-form__button button" type="submit">Отправить</button>
           <div class="callback-form__consent-box">
-            <input class="visually-hidden" name="personal-data-modal" type="checkbox" id="consent-modal" checked>
+            <input class="visually-hidden" name="personal-data-modal" type="checkbox" id="consent-modal" checked required>
             <label for="consent-modal">Я согласен на обработку персональных данных</label>
           </div>
         </div>

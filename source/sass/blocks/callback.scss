@@ -13,19 +13,19 @@
   @include center-fix-width(25px, 1220px);
   display: flex;
   justify-content: flex-end;
-  background: url("../../img/png/paper-airplane.png") no-repeat 0px 161px;
+  background: url("../img/png/paper-airplane.png") no-repeat 0 161px;
 
   @media (min-resolution: 2dppx) {
-    background: url("../../img/png/paper-airplane@2x.png") no-repeat 0px 161px / 511px 288px,
+    background: url("../img/png/paper-airplane@2x.png") no-repeat 0 161px / 511px 288px;
   }
 
   @media (max-width: $tablet-width) {
-    @include side-padding(87px, 87px);
+    @include side-padding(92px, 87px);
     background-image: none;
     display: block;
   }
 
-  @media (max-width: $mobile-width)  {
+  @media (max-width: $mobile-width) {
     @include side-padding(15px, 15px);
   }
 }
@@ -39,13 +39,13 @@
 
   @media (max-width: $tablet-width) {
     max-width: none;
-    padding-top: 83px;
+    padding-top: 80px;
     padding-left: 0;
-    padding-bottom: 103px;
+    padding-bottom: 64px;
   }
 
   @media (max-width: $mobile-width) {
-    padding-top: 33px;
-    padding-bottom: 41px;
+    padding-top: 29px;
+    padding-bottom: 0;
   }
 }

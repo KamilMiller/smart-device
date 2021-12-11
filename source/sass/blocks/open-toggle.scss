@@ -19,7 +19,7 @@
   }
 
   &--closed {
-    &:after {
+    &::after {
       @include size(1px, 16px);
       content: "";
       position: absolute;

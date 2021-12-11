@@ -7,6 +7,15 @@
 .advantages__inner {
   @include center-fix-width(24px, 1462px);
   padding-top: 112px;
+
+  @media (max-width: $tablet-width) {
+    padding-top: 53px;
+  }
+
+  @media (max-width: $mobile-width) {
+    @include side-padding(14px, 16px);
+    padding-top: 37px;
+  }
 }
 
 .advantages__list {
@@ -28,6 +37,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 55px;
   }
 }
 
@@ -56,7 +66,29 @@
 
   @media (max-width: $tablet-width) {
     min-height: 232px;
-    padding: 24px 25px 22px 25px;
+    padding: 24px 20px 22px 25px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-bottom: 26px;
+  }
+
+  &--suppliers {
+    @media (max-width: $mobile-width) {
+      padding: 21px 10px 29px 24px;
+    }
+  }
+
+  &--confidentiality {
+    @media (max-width: $mobile-width) {
+      padding: 15px 10px 22px 24px;
+    }
+  }
+
+  &--personal-price {
+    @media (max-width: $mobile-width) {
+      padding: 21px 15px 22px 24px;
+    }
   }
 }
 
@@ -64,17 +96,34 @@
   @include font(24px, 34px);
   margin-top: 0;
   margin-bottom: 15px;
-  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   color: $standart-blue;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 9px;
+  }
 
   @media (max-width: $mobile-width) {
     @include font(20px, 28px);
   }
 }
 
+.advantages__item--confidentiality h4,
+.advantages__item--personal-price h4 {
+  @media (max-width: $mobile-width) {
+    margin-bottom: 18px;
+  }
+}
+
 .advantages__item p {
   @include font(16px, 22px);
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (max-width: $tablet-width) {
+    line-height: 21.5px;
+  }
 }
 
 .advantages__icon-box {
@@ -84,13 +133,53 @@
   margin-bottom: 19px;
   line-height: 0;
 
+  @media (max-width: $tablet-width) {
+    margin-bottom: 8px;
+  }
+
   @media (max-width: $mobile-width) {
     margin-bottom: 14px;
   }
 }
 
+.advantages__item--confidentiality .advantages__icon-box {
+  @media (max-width: $mobile-width) {
+    margin-bottom: 12px;
+  }
+}
+
+.advantages__item--personal-price .advantages__icon-box {
+  @media (max-width: $mobile-width) {
+    margin-bottom: 12px;
+  }
+}
+
 .advantages__icon-box svg {
   fill: $standart-blue;
+}
+
+.advantages__watch-icon {
+  @media (max-width: $tablet-width) {
+    @include size(29px, 36px);
+  }
+}
+
+.advantages__group-icon {
+  @media (max-width: $tablet-width) {
+    @include size(32px, 32px);
+  }
+}
+
+.advantages__detective-icon {
+  @media (max-width: $tablet-width) {
+    @include size(30px, 26px);
+  }
+}
+
+.advantages__tag-icon {
+  @media (max-width: $tablet-width) {
+    @include size(32px, 32px);
+  }
 }
 
 .advantages__about-company {
@@ -101,8 +190,14 @@
   padding-left: 180px;
   padding-bottom: 65px;
 
+  @media (max-width: $tablet-width) {
+    padding-left: 189px;
+    padding-bottom: 83px;
+  }
+
   @media (max-width: $mobile-width) {
     padding-left: 0;
+    padding-bottom: 65px;
   }
 
   &::before {
@@ -114,7 +209,7 @@
     left: -98px;
     transform: rotate(-90deg);
     display: block;
-    font-family: "Roboto Condensed", Arial, sans-serif;
+    font-family: "Roboto Condensed", "Arial", sans-serif;
     font-weight: 700;
     background-image: url("../img/jpg/board-bg.jpg");
     background-size: cover;
@@ -123,6 +218,13 @@
     color: $title-slogan-text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @media (max-width: $tablet-width) {
+      @include size(355px, 200px);
+      @include font(178.32px, 250.77px);
+      top: 81px;
+      left: -132px;
+    }
 
     @media (max-width: $mobile-width) {
       display: none;
@@ -134,9 +236,19 @@
   @include font(36px, 51px);
   margin-top: 0;
   margin-bottom: 19px;
-  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 400;
   color: $advantages-title;
+
+  @media (max-width: $tablet-width) {
+    @include font(32px, 45px);
+    margin-bottom: 22px;
+  }
+
+  @media (max-width: $mobile-width) {
+    @include font(28px, 40px);
+    margin-bottom: 21px;
+  }
 }
 
 .advantages__about-company p {
@@ -145,6 +257,11 @@
   color: $advantages-title;
   margin-top: 0;
   margin-bottom: 22px;
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 40px;
+    margin-left: 2px;
+  }
 }
 
 .advantages__text-dots {
@@ -161,4 +278,13 @@
 
 .advantages__more-button {
   margin-top: 16px;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 18px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-top: -12px;
+    margin-left: 3px;
+  }
 }

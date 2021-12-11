@@ -5,6 +5,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+
+  @media (max-width: $tablet-width) {
+    gap: 14px;
+  }
 }
 
 .socials__link {

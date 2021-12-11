@@ -9,13 +9,18 @@ const navListButton = footer.querySelector('.page-footer__navigation-button');
 const contactList = footer.querySelector('.page-footer__office-contacts-list');
 const contactListCloseClass = 'page-footer__office-contacts-list--closed';
 const contactListButton = footer.querySelector('.page-footer__office-info-button');
-const phoneInput = document.getElementById('user-tel');
-const phoneInputModal = document.getElementById('user-tel-modal');
+const form = document.querySelector('.callback-form');
+const formNameInput = document.getElementById('user-name');
+const formPhoneInput = document.getElementById('user-tel');
+const formMessageInput = document.getElementById('message');
 const modal = document.querySelector('.modal');
 const modalWindow = modal.querySelector('.modal__window');
 const modalCloseButton = modalWindow.querySelector('.modal__close-button');
 const modalForm = modalWindow.querySelector('.modal__form');
-const modalConsentCheckBox = modalWindow.querySelector('input[id="consent-modal"]');;
+const modalNameInput = document.getElementById('user-name-modal');
+const modalPhoneInput = document.getElementById('user-tel-modal');
+const modalMessageInput = document.getElementById('message-modal');
+const modalConsentCheckBox = modalWindow.querySelector('input[id="consent-modal"]');
 const callBackButton = document.querySelector('.page-header__callback-button');
 
 // Accordion.
@@ -36,63 +41,65 @@ let openElement = (toggle, element, closeClass) => {
   } else {
     toggle.classList.add('open-toggle--closed');
     element.classList.add(closeClass);
-  }
-}
+  };
+};
 
 navListButton.addEventListener('click', event => {
   openElement(event.target, navList, navListCloseClass);
-})
+});
 
 contactListButton.addEventListener('click', event => {
   openElement(event.target, contactList, contactListCloseClass);
-})
+});
 
 // Phone mask.
 
-phoneInput.addEventListener('focus', _ => {
-  if(!/^\+\d*$/.test(phoneInput.value)) {
-    phoneInput.value = '+7(';
-  }
+formPhoneInput.addEventListener('focus', _ => {
+  if(!/^\+\d*$/.test(formPhoneInput.value)) {
+    formPhoneInput.value = '+7(';
+  };
 });
 
-phoneInput.addEventListener('keypress', e => {
+formPhoneInput.addEventListener('keypress', e => {
   if(!/\d/.test(e.key)) {
     e.preventDefault();
-  }
-});
-
-phoneInput.addEventListener('keypress', _ => {
-  if(phoneInput.value.length == 6) {
-    phoneInput.value += ')';
   };
-})
-
-phoneInputModal.addEventListener('focus', _ => {
-  if(!/^\+\d*$/.test(phoneInputModal.value)) {
-    phoneInputModal.value = '+7(';
-  }
 });
 
-phoneInputModal.addEventListener('keypress', e => {
+formPhoneInput.addEventListener('keypress', _ => {
+  if(formPhoneInput.value.length == 6) {
+    formPhoneInput.value += ')';
+  };
+});
+
+modalPhoneInput.addEventListener('focus', _ => {
+  if(!/^\+\d*$/.test(modalPhoneInput.value)) {
+    modalPhoneInput.value = '+7(';
+  };
+});
+
+modalPhoneInput.addEventListener('keypress', e => {
   if(!/\d/.test(e.key)) {
     e.preventDefault();
-  }
+  };
 });
 
-phoneInputModal.addEventListener('keypress', _ => {
-  if(phoneInputModal.value.length == 6) {
-    phoneInputModal.value += ')';
+modalPhoneInput.addEventListener('keypress', _ => {
+  if(modalPhoneInput.value.length == 6) {
+    modalPhoneInput.value += ')';
   };
-})
+});
 
 // Modal.
 
 const openPopUp = () => {
   modal.classList.add('modal--open');
+  modalNameInput.focus();
+  modalNameInput.select();
   modalCloseButton.addEventListener('click', closePopUp);
   document.addEventListener('keydown', onModalEscKeyDown);
   modal.addEventListener('click', onSpaceAroundModalClick);
-}
+};
 
 const closePopUp = () => {
   modal.classList.remove('modal--open');
@@ -106,15 +113,14 @@ const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
 const onModalEscKeyDown = (evt) => {
   if (isEscEvent(evt)) {
     closePopUp()
-  }
+  };
 };
 
 const onSpaceAroundModalClick = (evt) => {
   const target = evt.target;
-  console.log(target);
   if (target == modal) {
     closePopUp();
-  }
+  };
 };
 
 callBackButton.addEventListener('click', openPopUp);
@@ -124,5 +130,21 @@ modalForm.addEventListener('submit', evt => {
   } else {
     evt.preventDefault();
     alert('Нужно согласие на обработку персональных данных');
-  }
-})
+  };
+});
+
+// Submit Form & Local Data Storage.
+
+onSubmit = (nameInput, phoneInput, messageInput) => {
+  localStorage.setItem("name", nameInput.value);
+  localStorage.setItem("phone", phoneInput.value);
+  localStorage.setItem("message", messageInput.value);
+}
+
+form.addEventListener('submit', () => {
+  onSubmit(formNameInput, formPhoneInput, formMessageInput);
+});
+
+modalForm.addEventListener('submit', () => {
+  onSubmit(modalNameInput, modalPhoneInput, modalMessageInput);
+});

@@ -22,7 +22,7 @@
   line-height: 0;
 }
 
-.title-box__logo svg {
+.title-box__logo--main svg {
   @media (max-width: $mobile-width) {
     @include size(38px, 38px);
   }
@@ -37,13 +37,13 @@
 .title-box__title p {
   @include font(25px, 29px);
   margin: 0;
-  font-family: "Roboto Condensed", Impact, sans-serif;
+  font-family: "Roboto Condensed", "Impact", sans-serif;
   font-weight: 700;
 }
 
 .title-box__title i {
   @include font(12px, 14px);
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
   margin: 3px 0 0 0;
   color: $title-slogan-text;
 }
