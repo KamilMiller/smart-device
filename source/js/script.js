@@ -90,6 +90,7 @@ modalPhoneInput.addEventListener('keypress', e => {
 // Modal.
 
 let openPopUp = () => {
+  let arr = document.querySelectorAll('[tabindex="2"]').forEach(element => element.setAttribute('tabindex', '-1'));
   body.classList.add('page__body--modal-open');
   modalForm.reset();
   modal.classList.add('modal--open');
@@ -101,6 +102,7 @@ let openPopUp = () => {
 };
 
 let closePopUp = () => {
+  let arr = document.querySelectorAll('[tabindex="-1"]').forEach(element => element.setAttribute('tabindex', '2'));
   body.classList.remove('page__body--modal-open');
   modal.classList.remove('modal--open');
   modalCloseButton.removeEventListener('click', closePopUp);
