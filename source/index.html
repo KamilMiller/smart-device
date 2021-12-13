@@ -113,7 +113,7 @@
       <div class="advantages__about-company">
         <h3>О компании</h3>
         <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.</p>
-        <p>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог<i class="advantages__text-dots .advantages__text-dots--nojs">..</i><span> (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</span></p>
+        <p>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог<i class="advantages__text-dots">..</i><span> (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</span></p>
         <button class="advantages__more-button button button--blue-border" type="button" tabindex="2">Подробнее</button>
       </div>
     </div>
@@ -146,7 +146,7 @@
             <label class="visually-hidden" for="user-name"></label>
             <input type="text" name="name" tabindex="2" id="user-name" placeholder="Имя" required>
             <label class="visually-hidden" for="user-tel"></label>
-            <input type="tel" name="phone" tabindex="2" id="user-tel" minlength="14" maxlength="14" placeholder="Телефон" required>
+            <input type="tel" name="phone" tabindex="2" id="user-tel" minlength="14" maxlength="14" pattern="\+\d\(\d{3}\)\d{7}" placeholder="Телефон" required>
             <label class="visually-hidden" for="message"></label>
             <textarea id="message" name="message" tabindex="2" placeholder="Ваш вопрос" required></textarea>
             <button class="callback-form__button button" tabindex="2" type="submit">Задать вопрос</button>
@@ -160,6 +160,7 @@
     </div>
   </section>
   <footer class="page-footer">
+    <h2 class="visually-hidden">Полезная информация</h2>
     <div class="page-footer__content-wrapper">
       <div class="page-footer__company-profile">
         <h3 class="visually-hidden">"Smart Device" в социальных сетях</h3>
@@ -263,7 +264,7 @@
           <label class="visually-hidden" for="user-name-modal"></label>
           <input type="text" name="name" id="user-name-modal" placeholder="Имя" required>
           <label class="visually-hidden" for="user-tel-modal"></label>
-          <input type="tel" name="phone" id="user-tel-modal" minlength="14" maxlength="14" placeholder="Телефон" required>
+          <input type="tel" name="phone" id="user-tel-modal" minlength="14" maxlength="14" pattern="\+\d\(\d{3}\)\d{7}" placeholder="Телефон" required>
           <label class="visually-hidden" for="message"></label>
           <textarea id="message-modal" name="message" placeholder="Ваш вопрос" required></textarea>
           <button class="callback-form__button button" type="submit">Отправить</button>

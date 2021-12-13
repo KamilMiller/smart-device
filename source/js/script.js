@@ -1,6 +1,7 @@
 
 // Constants.
 
+const body = document.querySelector('body');
 const footer = document.querySelector('.page-footer');
 const openToggle = footer.querySelector('.open-toggle');
 const navList = footer.querySelector('.page-footer__navigation-list');
@@ -13,6 +14,7 @@ const form = document.querySelector('.callback-form');
 const formNameInput = document.getElementById('user-name');
 const formPhoneInput = document.getElementById('user-tel');
 const formMessageInput = document.getElementById('message');
+const consentCheckBox = document.getElementById('consent');
 const modal = document.querySelector('.modal');
 const modalWindow = modal.querySelector('.modal__window');
 const modalCloseButton = modalWindow.querySelector('.modal__close-button');
@@ -21,6 +23,7 @@ const modalNameInput = document.getElementById('user-name-modal');
 const modalPhoneInput = document.getElementById('user-tel-modal');
 const modalMessageInput = document.getElementById('message-modal');
 const modalConsentCheckBox = modalWindow.querySelector('input[id="consent-modal"]');
+const modalFormSubmitButton = modalWindow.querySelector('.callback-form__button')
 const callBackButton = document.querySelector('.page-header__callback-button');
 
 // Accordion.
@@ -64,9 +67,6 @@ formPhoneInput.addEventListener('keypress', e => {
   if(!/\d/.test(e.key)) {
     e.preventDefault();
   };
-});
-
-formPhoneInput.addEventListener('keypress', _ => {
   if(formPhoneInput.value.length == 6) {
     formPhoneInput.value += ')';
   };
@@ -82,9 +82,6 @@ modalPhoneInput.addEventListener('keypress', e => {
   if(!/\d/.test(e.key)) {
     e.preventDefault();
   };
-});
-
-modalPhoneInput.addEventListener('keypress', _ => {
   if(modalPhoneInput.value.length == 6) {
     modalPhoneInput.value += ')';
   };
@@ -92,7 +89,9 @@ modalPhoneInput.addEventListener('keypress', _ => {
 
 // Modal.
 
-const openPopUp = () => {
+let openPopUp = () => {
+  body.classList.add('page__body--modal-open');
+  modalForm.reset();
   modal.classList.add('modal--open');
   modalNameInput.focus();
   modalNameInput.select();
@@ -101,22 +100,23 @@ const openPopUp = () => {
   modal.addEventListener('click', onSpaceAroundModalClick);
 };
 
-const closePopUp = () => {
+let closePopUp = () => {
+  body.classList.remove('page__body--modal-open');
   modal.classList.remove('modal--open');
   modalCloseButton.removeEventListener('click', closePopUp);
   document.removeEventListener('keydown', onModalEscKeyDown);
   modal.removeEventListener('click', onSpaceAroundModalClick);
 };
 
-const isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
+let isEscEvent = (evt) => evt.key === 'Escape' || evt.key === 'Esc';
 
-const onModalEscKeyDown = (evt) => {
+let onModalEscKeyDown = (evt) => {
   if (isEscEvent(evt)) {
-    closePopUp()
+    closePopUp();
   };
 };
 
-const onSpaceAroundModalClick = (evt) => {
+let onSpaceAroundModalClick = (evt) => {
   const target = evt.target;
   if (target == modal) {
     closePopUp();
@@ -124,27 +124,23 @@ const onSpaceAroundModalClick = (evt) => {
 };
 
 callBackButton.addEventListener('click', openPopUp);
-modalForm.addEventListener('submit', evt => {
-  if (modalConsentCheckBox.checked) {
-    closePopUp();
-  } else {
-    evt.preventDefault();
-    alert('Нужно согласие на обработку персональных данных');
-  };
-});
 
 // Submit Form & Local Data Storage.
 
-onSubmit = (nameInput, phoneInput, messageInput) => {
+let onSubmit = (nameInput, phoneInput, messageInput) => {
   localStorage.setItem("name", nameInput.value);
   localStorage.setItem("phone", phoneInput.value);
   localStorage.setItem("message", messageInput.value);
-}
+};
 
-form.addEventListener('submit', () => {
+form.addEventListener('submit', (evt) => {
+  if (!consentCheckBox.checked) {
+    preventDefault(evt);
+  }
   onSubmit(formNameInput, formPhoneInput, formMessageInput);
 });
 
-modalForm.addEventListener('submit', () => {
+modalForm.addEventListener('submit', (evt) => {
+  modalConsentCheckBox.checked ? closePopUp() : preventDefault(evt);
   onSubmit(modalNameInput, modalPhoneInput, modalMessageInput);
 });

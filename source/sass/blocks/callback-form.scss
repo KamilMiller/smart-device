@@ -97,6 +97,7 @@
 .callback-form__inner textarea {
   grid-column: 1 / 3;
   min-height: 154px;
+  resize: none;
 
   @media (max-width: $tablet-width) {
     min-height: 159px;
@@ -120,6 +121,7 @@
   background-color: rgba($white, 0.1);
   color: $white;
 
+  &:hover,
   &:focus {
     outline: 1px solid $white;
   }

@@ -219,6 +219,10 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/jpg/board-bg@2x.jpg");
+    }
+
     @media (max-width: $tablet-width) {
       @include size(355px, 200px);
       @include font(178.32px, 250.77px);
