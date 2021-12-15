@@ -4,10 +4,23 @@
   display: flex;
 }
 
-.page-header__title-box {
+.page-header__logo {
   align-self: flex-start;
+  display: block;
   margin-right: auto;
+  line-height: 0;
 }
+
+.page-header__logo img {
+  @media (max-width: $mobile-width) {
+    @include size(38px, 38px);
+  }
+}
+
+// .page-header__title-box {
+//   align-self: flex-start;
+//   margin-right: auto;
+// }
 
 .page-header__contact-box {
   display: flex;
@@ -66,7 +79,7 @@
 .page-header__callback-button {
   align-self: flex-end;
   margin-left: 50px;
-  margin-bottom: 3px;
+  margin-top: 3px;
   margin-right: 3px;
 
   @media (max-width: $tablet-width) {

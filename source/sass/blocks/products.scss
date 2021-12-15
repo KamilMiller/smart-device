@@ -2,6 +2,7 @@
 
 .products {
   background-color: $bg-dark;
+  border-bottom: 1px solid $bg-dark;
 }
 
 .products__inner {
@@ -61,6 +62,8 @@
 }
 
 .products__item {
+  display: flex;
+  justify-content: stretch;
   min-height: 620px;
   box-sizing: border-box;
 
@@ -71,7 +74,7 @@
 
 .products__item a {
   @include font(20px, 30px);
-  @include size(100%, 100%);
+  width: 100%;
   position: relative;
   display: block;
   padding: 50px 44px 100px 44px;

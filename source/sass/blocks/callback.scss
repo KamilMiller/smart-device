@@ -1,8 +1,9 @@
 // Block with Callback Form.
 
 .callback {
-  background: url("../../img/svg/form-block-bg.svg") no-repeat 166px -60px;
+  background: url("../img/svg/form-block-bg.svg") no-repeat 166px -60px;
   background-color: $standart-blue;
+  border-bottom: 1px solid $standart-blue;
 
   @media (max-width: $tablet-width) {
     background-image: none;
@@ -34,14 +35,14 @@
   max-width: 50%;
   padding-top: 91px;
   padding-left: 15px;
-  padding-bottom: 73px;
+  padding-bottom: 71px;
   box-sizing: border-box;
 
   @media (max-width: $tablet-width) {
     max-width: none;
     padding-top: 80px;
     padding-left: 0;
-    padding-bottom: 64px;
+    padding-bottom: 62px;
   }
 
   @media (max-width: $mobile-width) {

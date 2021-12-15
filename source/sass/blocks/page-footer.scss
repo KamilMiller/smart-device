@@ -68,8 +68,10 @@
   }
 }
 
-.page-footer__title-box {
+.page-footer__logo {
+  display: block;
   margin-bottom: 53px;
+  line-height: 0;
 
   @media (max-width: $tablet-width) {
     margin-bottom: 0;
@@ -135,6 +137,7 @@
     justify-content: space-between;
     align-items: center;
     min-height: 72px;
+    cursor: pointer;
   }
 }
 

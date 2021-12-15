@@ -7,9 +7,13 @@ const openToggle = footer.querySelector('.open-toggle');
 const navList = footer.querySelector('.page-footer__navigation-list');
 const navListCloseClass = 'page-footer__navigation-list--closed';
 const navListButton = footer.querySelector('.page-footer__navigation-button');
+const navListTab = footer.querySelector('.page-footer__navigation-header');
+
 const contactList = footer.querySelector('.page-footer__office-contacts-list');
 const contactListCloseClass = 'page-footer__office-contacts-list--closed';
 const contactListButton = footer.querySelector('.page-footer__office-info-button');
+const contactListTab = footer.querySelector('.page-footer__office-info-header');
+
 const form = document.querySelector('.callback-form');
 const formNameInput = document.getElementById('user-name');
 const formPhoneInput = document.getElementById('user-tel');
@@ -47,13 +51,9 @@ let openElement = (toggle, element, closeClass) => {
   };
 };
 
-navListButton.addEventListener('click', event => {
-  openElement(event.target, navList, navListCloseClass);
-});
+navListTab.addEventListener('click', () => openElement(navListButton, navList, navListCloseClass));
 
-contactListButton.addEventListener('click', event => {
-  openElement(event.target, contactList, contactListCloseClass);
-});
+contactListTab.addEventListener('click', () => openElement(contactListButton, contactList, contactListCloseClass));
 
 // Phone mask.
 

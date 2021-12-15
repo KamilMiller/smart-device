@@ -24,12 +24,10 @@
   @include list-reset;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
   gap: 30px;
   margin-bottom: 105px;
 
   @media (max-width: $tablet-width) {
-    grid-template-rows: auto;
     margin-bottom: 59px;
   }
 
@@ -48,7 +46,6 @@
   background-color: $white;
   border: 1px solid $advantages-list-border;
   border-left: 3px solid $standart-blue;
-  cursor: pointer;
 
   &:hover {
     background-color: $standart-blue;

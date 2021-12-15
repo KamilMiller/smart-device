@@ -12,8 +12,6 @@
   <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials">
   <link rel="preload" href="fonts/PTMono-Regular.woff" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/PTMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/Roboto-Medium.woff" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/RobotoCondensed-Bold.woff" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/RobotoCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/RobotoCondensed-Regular.woff" as="font" type="font/woff2" crossorigin>
@@ -27,17 +25,12 @@
 
   <div class="main-screen-wrapper">
     <header class="main-screen-wrapper__header page-header">
-      <div class="page-header__title-box title-box title-box--short-type">
-        <a class="title-box__logo title-box__logo--main" href="#" tabindex="2">
-          <svg width="52" height="52">
-            <use xlink:href="img/svg/sprite.svg#logo"></use>
-          </svg>
-        </a>
-        <div class="title-box__title">
-          <p>Smart Device</p>
-          <i>умные технологии</i>
-        </div>
-      </div>
+      <a class="page-header__logo" tabindex="2">
+        <picture>
+          <source media="(max-width: 767px)" srcset="img/svg/logo.svg">
+          <img src="img/svg/logo-full.svg" width="202" height="52" alt="Логотип Smart Device">
+        </picture>
+      </a>
       <div class="page-header__contact-box">
         <a href="mailto:info@sd.ru" tabindex="2">
           <svg class="page-header__email-icon" width="19" height="14">
@@ -51,6 +44,8 @@
           </svg>
           +7 (495) 000 52 52
         </a>
+      </div>
+      <div class="page-header__button-wrapper">
         <button class="page-header__callback-button button" tabindex="2" type="button">Заказать звонок</button>
       </div>
     </header>
@@ -66,7 +61,7 @@
       <div class="main-block__background"></div>
     </section>
   </div>
-  <main>
+  <main class="page__main">
     <section class="advantages">
       <h2 class="visually-hidden">Преимущества и информация о компании</h2>
       <div class="advantages__inner">
@@ -166,17 +161,9 @@
     <div class="page-footer__content-wrapper">
       <div class="page-footer__company-profile">
         <h3 class="visually-hidden">"Smart Device" в социальных сетях</h3>
-        <div class="page-footer__title-box title-box">
-          <a class="title-box__logo" href="#" tabindex="2">
-            <svg width="52" height="52">
-              <use xlink:href="img/svg/sprite.svg#logo"></use>
-            </svg>
-          </a>
-          <div class="title-box__title">
-            <p>Smart Device</p>
-            <i>умные технологии</i>
-          </div>
-        </div>
+        <a class="page-footer__logo" tabindex="2">
+          <img src="img/svg/logo-full-dark.svg" width="202" height="52" alt="Логотип Smart Device">
+        </a>
         <p class="page-footer__formerly-name">1999-2018 SD Service Devices</p>
         <ul class="page-footer__socials socials">
           <li class="socials__item">

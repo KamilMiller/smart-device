@@ -9,9 +9,16 @@
   }
 
   @media (max-width: $mobile-width) {
+    // position: relative;
     display: block;
   }
 }
+
+// .main-block__content-wrapper {
+//   @media (max-width: $mobile-width) {
+//     z-index: 2;
+//   }
+// }
 
 .main-block__content-inner {
   max-width: 750px;
@@ -32,12 +39,12 @@
     margin-left: 0;
     padding-top: 216px;
     background:
-      url("../img/png/printed-circuit-board.png") 5vh 0 / 301px 220px no-repeat,
+      url("../img/png/printed-circuit-board.png") right -7px top 21px / 301px 220px no-repeat,
       url("../img/svg/triangles.svg") 52vw 0 / 461px 367px  no-repeat;
 
     @media (min-resolution: 2dppx) {
       background:
-        url("../img/png/printed-circuit-board@2x.png") 5vh 22px / 301px 220px no-repeat,
+        url("../img/png/printed-circuit-board@2x.png") right -7px top 21px / 301px 220px no-repeat,
         url("../img/svg/triangles.svg") 52vw 0 / 461px 367px  no-repeat;
     }
   }
@@ -163,5 +170,10 @@
 
   @media (max-width: $mobile-width) {
     display: none;
+    // @include size(602px, 367px);
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // z-index: 1;
   }
 }
