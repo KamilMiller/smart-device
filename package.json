@@ -22,7 +22,7 @@
     "postcss-csso": "^5.0.1",
     "postcss-scss": "^4.0.2",
     "sass": "^1.43.4",
-    "stylelint": "^13.13.1",
+    "stylelint": "^14.0.0",
     "stylelint-config-htmlacademy": "^0.1.12"
   },
   "scripts": {
@@ -46,6 +46,6 @@
     "source/sass/**/*.scss"
   ],
   "engines": {
-    "node": "16.13.0"
+    "node": "16.20.1"
   }
 }
